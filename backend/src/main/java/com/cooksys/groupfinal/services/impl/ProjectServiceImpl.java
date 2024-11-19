@@ -43,7 +43,7 @@ public class ProjectServiceImpl implements ProjectService {
         project.setActive(projectRequestDto.isActive());
         project.setTeam(team.get());
 
-        
+
         return projectMapper.entityToDto(projectRepository.saveAndFlush(project));
     }
 }
