@@ -6,6 +6,7 @@ import com.cooksys.groupfinal.entities.Company;
 import com.cooksys.groupfinal.entities.Project;
 import com.cooksys.groupfinal.entities.Team;
 import com.cooksys.groupfinal.exceptions.BadRequestException;
+import com.cooksys.groupfinal.exceptions.NotFoundException;
 import com.cooksys.groupfinal.mappers.ProjectMapper;
 import com.cooksys.groupfinal.repositories.CompanyRepository;
 import com.cooksys.groupfinal.repositories.ProjectRepository;
@@ -40,10 +41,30 @@ public class ProjectServiceImpl implements ProjectService {
         Project project = new Project();
         project.setName(projectRequestDto.getName());
         project.setDescription(projectRequestDto.getDescription());
-        project.setActive(projectRequestDto.isActive());
+        project.setActive(projectRequestDto.getActive());
         project.setTeam(team.get());
 
 
         return projectMapper.entityToDto(projectRepository.saveAndFlush(project));
+    }
+
+    @Override
+    public ProjectDto updateProject(ProjectRequestDto projectRequestDto, Long id) {
+
+        Optional<Project> project = projectRepository.findById(id);
+        if (project.isEmpty()) {
+            throw new NotFoundException("A project with the provided id does not exist.");
+        }
+
+        if(projectRequestDto.getName() != null) {
+            project.get().setName(projectRequestDto.getName());
+        }
+        if(projectRequestDto.getDescription() != null) {
+            project.get().setDescription(projectRequestDto.getDescription());
+        }
+        if(projectRequestDto.getActive() != null) {
+            project.get().setActive(projectRequestDto.getActive());
+        }
+        return projectMapper.entityToDto(projectRepository.saveAndFlush(project.get()));
     }
 }
