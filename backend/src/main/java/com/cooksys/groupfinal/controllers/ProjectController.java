@@ -17,6 +17,8 @@ public class ProjectController {
 
 
 	@PostMapping("/create/team/{teamId}")
+	@CrossOrigin(origins="*")
+
 	public ProjectDto createProject(@RequestBody ProjectRequestDto projectRequestDto,
 									@PathVariable Long teamId) {
 		return projectService.createProject(projectRequestDto, teamId);
