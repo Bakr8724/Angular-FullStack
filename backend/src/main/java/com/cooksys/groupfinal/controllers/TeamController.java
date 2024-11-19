@@ -16,6 +16,7 @@ public class TeamController {
 	private final TeamService teamService;
 
 	@PostMapping("/create/company/{companyId}")
+	@CrossOrigin(origins="*")
 	public TeamDto createTeam(@PathVariable Long companyId, @RequestBody TeamRequestDto teamRequestDto) {
 		return teamService.createTeam(companyId, teamRequestDto);
 	}

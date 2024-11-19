@@ -18,6 +18,7 @@ public class AnnouncementController {
 	private final AnnouncementService announcementService;
 
 	@PostMapping("/create/company/{companyId}/user/{userId}")
+	@CrossOrigin(origins="*")
 	public AnnouncementDto createAnnouncement(@RequestBody AnnouncementRequestDto announcementRequestDto, @PathVariable Long companyId, @PathVariable Long userId) {
 		return announcementService.createAnnouncement(announcementRequestDto, companyId, userId);
 	}

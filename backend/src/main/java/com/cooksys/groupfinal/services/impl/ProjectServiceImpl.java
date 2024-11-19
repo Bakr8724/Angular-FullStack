@@ -28,23 +28,15 @@ public class ProjectServiceImpl implements ProjectService {
     private final ProjectRepository projectRepository;
 
     @Override
-    public ProjectDto createProject(ProjectRequestDto projectRequestDto, Long companyId, Long teamId) {
-        Optional<Company> company = companyRepository.findById(companyId);
-        if (company.isEmpty()) {
-            throw new BadRequestException("Company doesn't exist");
-        }
+    public ProjectDto createProject(ProjectRequestDto projectRequestDto, Long teamId) {
         Optional<Team> team = teamRepository.findById(teamId);
         if (team.isEmpty()) {
             throw new BadRequestException("Team doesn't exist");
         }
 
-        Project project = new Project();
-        project.setName(projectRequestDto.getName());
-        project.setDescription(projectRequestDto.getDescription());
-        project.setActive(projectRequestDto.getActive());
+        Project project = projectMapper.dtoToEntity(projectRequestDto);
+        project.setActive(true);
         project.setTeam(team.get());
-
-
         return projectMapper.entityToDto(projectRepository.saveAndFlush(project));
     }
 

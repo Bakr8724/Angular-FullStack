@@ -15,7 +15,14 @@ public class ProjectController {
 	
 	private final ProjectService projectService;
 
+
+	@PostMapping("/create/team/{teamId}")
+	public ProjectDto createProject(@RequestBody ProjectRequestDto projectRequestDto,
+									@PathVariable Long teamId) {
+		return projectService.createProject(projectRequestDto, teamId);
+	}
 	@PatchMapping("/{id}")
+	@CrossOrigin(origins="*")
 	public ProjectDto updateProject(@RequestBody ProjectRequestDto projectRequestDto, @PathVariable Long id) {
 		return projectService.updateProject(projectRequestDto, id);
 	}

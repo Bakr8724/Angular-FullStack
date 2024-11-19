@@ -50,11 +50,7 @@ public class CompanyController {
         return userService.createUser(userRequestDto, companyId);
     }
 
-    @PostMapping("{companyId}/team/{teamId}/projects")
-    public ProjectDto createProject(@RequestBody ProjectRequestDto projectRequestDto, @PathVariable Long companyId,
-                                    @PathVariable Long teamId) {
-        return projectService.createProject(projectRequestDto, companyId, teamId);
-    }
+
 
     @GetMapping
     public Set<CompanyDto> getAllCompanies(){
