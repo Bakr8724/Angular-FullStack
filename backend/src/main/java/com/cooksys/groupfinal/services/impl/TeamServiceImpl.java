@@ -30,7 +30,7 @@ public class TeamServiceImpl implements TeamService {
 
     @Override
     public TeamDto createTeam(Long companyId, TeamRequestDto teamRequestDto) {
-        Team team = teamMapper.dtoToEntity(teamRequestDto);
+        Team team = teamRepository.saveAndFlush(teamMapper.dtoToEntity(teamRequestDto));
         Company company = companyRepository.findById(companyId).orElseThrow(() -> new NotFoundException("Company not found"));
         company.getTeams().add(team);
         team.setCompany(company);
@@ -39,6 +39,6 @@ public class TeamServiceImpl implements TeamService {
         users.forEach(user -> user.getTeams().add(team));
         userRepository.saveAllAndFlush(users);
         companyRepository.saveAndFlush(company);
-        return teamMapper.entityToDto(teamRepository.saveAndFlush(team));
+        return teamMapper.entityToDto(team);
     }
 }

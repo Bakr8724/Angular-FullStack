@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9ed5efe-c199-4b0c-adc4-8a14519baf53" name="Changes" comment="">
+    <list default="true" id="b9ed5efe-c199-4b0c-adc4-8a14519baf53" name="Changes" comment="Solved conflict">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/services/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/services/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/services/impl/TeamServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/services/impl/TeamServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,11 +101,25 @@
       <workItem from="1731970928629" duration="435000" />
       <workItem from="1731971615770" duration="6042000" />
       <workItem from="1731983205447" duration="1364000" />
+      <workItem from="1732039429703" duration="1070000" />
     </task>
+    <task id="LOCAL-00001" summary="Solved conflict">
+      <option name="closed" value="true" />
+      <created>1731999280843</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731999280843</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Solved conflict" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solved conflict" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
