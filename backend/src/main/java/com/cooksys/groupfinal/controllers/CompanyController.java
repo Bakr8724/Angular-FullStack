@@ -3,6 +3,7 @@ package com.cooksys.groupfinal.controllers;
 import java.util.Set;
 
 import com.cooksys.groupfinal.dtos.*;
+import com.cooksys.groupfinal.services.ProjectService;
 import com.cooksys.groupfinal.services.UserService;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,7 @@ public class CompanyController {
 	
 	private final CompanyService companyService;
     private final UserService userService;
+    private final ProjectService projectService;
 	
 	@GetMapping("/{id}/users")
     public Set<FullUserDto> getAllUsers(@PathVariable Long id) {
@@ -46,6 +48,12 @@ public class CompanyController {
     @PostMapping("/{companyId}/users")
     public BasicUserDto createUser(@RequestBody UserRequestDto userRequestDto, @PathVariable Long companyId) {
         return userService.createUser(userRequestDto, companyId);
+    }
+
+    @PostMapping("{companyId}/team/{teamId}/projects")
+    public ProjectDto createProject(@RequestBody ProjectRequestDto projectRequestDto, @PathVariable Long companyId,
+                                    @PathVariable Long teamId) {
+        return projectService.createProject(projectRequestDto, companyId, teamId);
     }
 
 }

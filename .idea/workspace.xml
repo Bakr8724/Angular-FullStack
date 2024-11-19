@@ -5,18 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9ed5efe-c199-4b0c-adc4-8a14519baf53" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/dtos/CompanyRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/dtos/ProjectRequestDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/controllers/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/controllers/CompanyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/controllers/TeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/controllers/TeamController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/dtos/TeamRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/dtos/TeamRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/services/CompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/services/CompanyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/services/TeamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/services/TeamService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/services/impl/CompanyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/services/impl/CompanyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/services/impl/TeamServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/services/impl/TeamServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/services/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/services/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/services/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/services/ProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/services/impl/ProjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/services/impl/ProjectServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
