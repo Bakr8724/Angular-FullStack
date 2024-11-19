@@ -1,0 +1,62 @@
+<div class="page">
+
+    <div class="top-banner">
+        <span *ngIf="isAdmin; else workerBanner">ACTING AS ADMIN</span>
+        <ng-template #workerBanner>
+        <span>{{ userService.getUserSession()?.firstName }} {{ userService.getUserSession()?.lastName }}</span>
+        </ng-template>
+    </div>
+
+
+    <div class="header">
+        <a routerLink="/home">Home</a>
+        <a *ngIf="isAdmin" routerLink="/company">Company</a>
+        <a routerLink="/teams">Teams</a>
+        <a *ngIf="isAdmin" routerLink="/users">Users</a>
+        <a (click)="logout()">Logout</a>
+    </div>
+
+
+    <div class="content">
+        <h1>Announcements</h1>
+        <button *ngIf="isAdmin" class="new-announcement" (click)="openModal()">New</button>
+    
+        <div class="announcement-list">
+        <div *ngFor="let announcement of announcements" class="announcement-card">
+            <h3>{{ announcement.authorName }}</h3>
+            <p>{{ announcement.message }}</p>
+            <span>{{ announcement.date | date: 'MMMM d, yyyy' }}</span>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal-backdrop" *ngIf="showModal">
+    <div class="modal">
+      <div class="modal-header">
+
+        <button (click)="closeModal()" class="close-btn">×</button>
+      </div>
+      <div class="modal-body">
+        <label for="title">Title</label>
+        <input
+          id="title"
+          type="text"
+          [(ngModel)]="announcementForm.title"
+          placeholder="Enter title"
+        />
+  
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          [(ngModel)]="announcementForm.message"
+          placeholder="Enter message"
+        ></textarea>
+      </div>
+      <div class="modal-footer">
+        <button (click)="submitAnnouncement()" class="submit-btn">Submit</button>
+      </div>
+    </div>
+  </div>
+  

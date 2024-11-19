@@ -1,4 +1,4 @@
-.page{
+.pageLogin{
     position: fixed;
     top: 0;
     left: 0;
@@ -28,3 +28,51 @@
 
     box-shadow: 5px 5px 5px 5px #DEB992;
 }
+
+
+
+
+
+
+
+
+
+
+
+.pageAnnouncements {
+    padding: 20px;
+    background-color: #0f172a;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  
+  .admin-banner {
+    background-color: #1e40af;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .announcement-card {
+    background-color: #1e293b;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #334155;
+  }
+  
+  .announcement-card h3 {
+    margin: 0;
+    color: #38bdf8;
+  }
+  
+  .announcement-card span {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-top: 5px;
+    display: block;
+  }
+  

@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { SharedComponent } from './shared/shared.component';
 import { AdminComponent } from './admin/admin.component';
 import { WorkerComponent } from './worker/worker.component';
+import { AnnouncementsComponent } from './announcements/announcements.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SharedComponent,
     AdminComponent,
-    WorkerComponent
+    WorkerComponent,
+    AnnouncementsComponent
   ],
   imports: [
     BrowserModule,

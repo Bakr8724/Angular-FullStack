@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { UserService } from 'src/services/user.service';
@@ -7,14 +7,24 @@ import { UserService } from 'src/services/user.service';
   templateUrl: './shared.component.html',
   styleUrls: ['./shared.component.css']
 })
-export class SharedComponent {
-  username: string = '';
+export class SharedComponent implements OnInit{
+  email: string = '';
   password: string = '';
 
+  isLoggedIn: boolean = false;
+  isAdmin: boolean = false;
+
   constructor(private http: HttpClient, private router: Router, private userService: UserService){}
+  ngOnInit(): void {
+    const user = this.userService.getUserSession();
+    if(user){
+      this.isLoggedIn = true;
+      this.isAdmin = user.role === 'admin';
+    }
+  }
 
   login(){
-    const loginPL = {username: this.username, password: this.password};
+    const loginPL = {email: this.email, password: this.password};
 
     this.http.post('http://localhost:8080/users/login', loginPL).subscribe({
       next: (response: any) => {
@@ -33,6 +43,10 @@ export class SharedComponent {
         // Save user session using the service
         this.userService.setUserSession(user);
 
+        this.isLoggedIn = true;
+        this.isAdmin = user.role === 'admin';
+
+
         // Redirect based on user role
         if (user.role === 'admin') {
           this.router.navigate(['/admin']);
@@ -46,4 +60,6 @@ export class SharedComponent {
       },
     });
   }
+
+
 }
