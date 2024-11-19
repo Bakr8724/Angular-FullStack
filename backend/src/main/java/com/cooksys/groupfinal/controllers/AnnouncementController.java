@@ -1,11 +1,14 @@
 package com.cooksys.groupfinal.controllers;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.cooksys.groupfinal.dtos.AnnouncementDto;
+import com.cooksys.groupfinal.dtos.AnnouncementRequestDto;
+import org.springframework.web.bind.annotation.*;
 
 import com.cooksys.groupfinal.services.AnnouncementService;
 
 import lombok.RequiredArgsConstructor;
+
+import java.util.Set;
 
 @RestController
 @RequestMapping("/announcements")
@@ -13,5 +16,10 @@ import lombok.RequiredArgsConstructor;
 public class AnnouncementController {
 	
 	private final AnnouncementService announcementService;
+
+	@PostMapping("/create/company/{companyId}/user/{userId}")
+	public AnnouncementDto createAnnouncement(@RequestBody AnnouncementRequestDto announcementRequestDto, @PathVariable Long companyId, @PathVariable Long userId) {
+		return announcementService.createAnnouncement(announcementRequestDto, companyId, userId);
+	}
 
 }
