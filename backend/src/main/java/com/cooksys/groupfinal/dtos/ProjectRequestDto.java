@@ -3,12 +3,11 @@ package com.cooksys.groupfinal.dtos;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Set;
-
 @NoArgsConstructor
 @Data
-public class TeamRequestDto {
+
+public class ProjectRequestDto {
     private String name;
     private String description;
- private Set<Long> teammates;
+    private Boolean active;
 }

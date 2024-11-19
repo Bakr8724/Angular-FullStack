@@ -1,8 +1,6 @@
 package com.cooksys.groupfinal.services;
 
-import com.cooksys.groupfinal.dtos.CredentialsDto;
-import com.cooksys.groupfinal.dtos.EmailLoginDto;
-import com.cooksys.groupfinal.dtos.FullUserDto;
+import com.cooksys.groupfinal.dtos.*;
 
 public interface UserService {
 
@@ -11,4 +9,5 @@ public interface UserService {
 	FullUserDto login(EmailLoginDto emailLoginDto);
 
 
+    BasicUserDto createUser(UserRequestDto userRequestDto, Long companyId);
 }
