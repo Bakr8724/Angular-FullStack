@@ -56,4 +56,9 @@ public class CompanyController {
         return projectService.createProject(projectRequestDto, companyId, teamId);
     }
 
+    @GetMapping
+    public Set<CompanyDto> getAllCompanies(){
+        return companyService.getAllCompanies();
+    }
+
 }
