@@ -42,5 +42,4 @@ public class CompanyController {
 		return companyService.getAllProjects(companyId, teamId);
 	}
 
-
 }
