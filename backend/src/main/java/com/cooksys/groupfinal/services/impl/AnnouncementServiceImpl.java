@@ -34,8 +34,8 @@ public class AnnouncementServiceImpl implements AnnouncementService {
     @Override
     public AnnouncementDto createAnnouncement(AnnouncementRequestDto announcementRequestDto, Long companyId, Long userId) {
         User user = userRepository.findById(userId).orElseThrow(() -> new NotFoundException("User not found"));
-        if (user.getCompanies().stream().noneMatch(company -> company.getId().equals(companyId))) {
-            throw new NotFoundException("User does not belong to company");
+        if (!user.isAdmin()) {
+            throw new NotFoundException("User is not an admin");
         }
         Company company = companyRepository.findById(companyId).orElseThrow(() -> new NotFoundException("Company not found"));
         Announcement announcement = announcementMapper.dtoToEntity(announcementRequestDto);
