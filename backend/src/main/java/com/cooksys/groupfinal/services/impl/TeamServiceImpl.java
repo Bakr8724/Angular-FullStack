@@ -28,17 +28,17 @@ public class TeamServiceImpl implements TeamService {
     private final TeamRepository teamRepository;
     private final TeamMapper teamMapper;
 
-    @Override
-    public TeamDto createTeam(Long companyId, TeamRequestDto teamRequestDto) {
-        Team team = teamMapper.dtoToEntity(teamRequestDto);
-        Company company = companyRepository.findById(companyId).orElseThrow(() -> new NotFoundException("Company not found"));
-        company.getTeams().add(team);
-        team.setCompany(company);
-        Set<User> users = new HashSet<>(userRepository.findAllById(teamRequestDto.getTeammates()));
-        team.setTeammates(users);
-        users.forEach(user -> user.getTeams().add(team));
-        userRepository.saveAllAndFlush(users);
-        companyRepository.saveAndFlush(company);
-        return teamMapper.entityToDto(teamRepository.saveAndFlush(team));
-    }
+//    @Override
+//    public TeamDto createTeam(Long companyId, TeamRequestDto teamRequestDto) {
+//        Team team = teamMapper.dtoToEntity(teamRequestDto);
+//        Company company = companyRepository.findById(companyId).orElseThrow(() -> new NotFoundException("Company not found"));
+//        company.getTeams().add(team);
+//        team.setCompany(company);
+//        Set<User> users = new HashSet<>(userRepository.findAllById(teamRequestDto.getTeammates()));
+//        team.setTeammates(users);
+//        users.forEach(user -> user.getTeams().add(team));
+//        userRepository.saveAllAndFlush(users);
+//        companyRepository.saveAndFlush(company);
+//        return teamMapper.entityToDto(teamRepository.saveAndFlush(team));
+//    }
 }

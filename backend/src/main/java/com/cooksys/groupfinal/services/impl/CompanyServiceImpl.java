@@ -10,6 +10,7 @@ import java.util.Set;
 
 import com.cooksys.groupfinal.dtos.*;
 import com.cooksys.groupfinal.mappers.*;
+import com.cooksys.groupfinal.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
 import com.cooksys.groupfinal.entities.Announcement;
@@ -35,6 +36,7 @@ public class CompanyServiceImpl implements CompanyService {
 	private final TeamMapper teamMapper;
 	private final ProjectMapper projectMapper;
 	private final CompanyMapper companyMapper;
+	private final UserRepository userRepository;
 	
 	private Company findCompany(Long id) {
         Optional<Company> company = companyRepository.findById(id);
@@ -93,6 +95,30 @@ public class CompanyServiceImpl implements CompanyService {
 	public Set<CompanyDto> getAllCompanies() {
 		Set<Company> companies = new HashSet<>(companyRepository.findAll());
 		return companyMapper.entitiesToDtos(companies);
+	}
+
+	@Override
+	public CompanyDto createCompany(CompanyRequestDto companyRequestDto) {
+		Company company = new Company();
+		company.setName(companyRequestDto.getName());
+		company.setDescription(companyRequestDto.getDescription());
+
+		if (companyRequestDto.getTeams() != null && !companyRequestDto.getTeams().isEmpty()) {
+			Set<Team> teams = new HashSet<>(teamRepository.findAllById(companyRequestDto.getTeams()));
+			for (Team team : teams) {
+				team.setCompany(company);
+			}
+			company.setTeams(teams);
+		}
+
+		if (companyRequestDto.getEmployees() != null && !companyRequestDto.getEmployees().isEmpty()) {
+			Set<User> employees = new HashSet<>(userRepository.findAllById(companyRequestDto.getEmployees()));
+			for (User employee : employees) {
+				employee.getCompanies().add(company);
+			}
+			company.setEmployees(employees);
+		}
+		return companyMapper.entityToDto(companyRepository.save(company));
 	}
 
 }

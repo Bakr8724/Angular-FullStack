@@ -2,11 +2,12 @@ package com.cooksys.groupfinal.services.impl;
 
 import java.util.Optional;
 
-import com.cooksys.groupfinal.dtos.EmailLoginDto;
+import com.cooksys.groupfinal.dtos.*;
+import com.cooksys.groupfinal.entities.Company;
+import com.cooksys.groupfinal.mappers.BasicUserMapper;
+import com.cooksys.groupfinal.repositories.CompanyRepository;
 import org.springframework.stereotype.Service;
 
-import com.cooksys.groupfinal.dtos.CredentialsDto;
-import com.cooksys.groupfinal.dtos.FullUserDto;
 import com.cooksys.groupfinal.entities.Credentials;
 import com.cooksys.groupfinal.entities.User;
 import com.cooksys.groupfinal.exceptions.BadRequestException;
@@ -24,8 +25,10 @@ import lombok.RequiredArgsConstructor;
 public class UserServiceImpl implements UserService {
 	
 	private final UserRepository userRepository;
+    private final CompanyRepository companyRepository;
   private final FullUserMapper fullUserMapper;
 	private final CredentialsMapper credentialsMapper;
+    private final BasicUserMapper basicUserMapper;
 	
 	private User findUser(String username) {
         Optional<User> user = userRepository.findByCredentialsUsernameAndActiveTrue(username);
@@ -74,5 +77,22 @@ public class UserServiceImpl implements UserService {
         	userRepository.saveAndFlush(userToValidate);
         }
         return fullUserMapper.entityToFullUserDto(userToValidate);
+    }
+
+    @Override
+    public BasicUserDto createUser(UserRequestDto userRequestDto, Long companyId) {
+        Optional<Company> company = companyRepository.findById(companyId);
+        if (company.isEmpty()) {
+            throw new BadRequestException("Company doesn't exist");
+        }
+        User user = basicUserMapper.requestDtoToEntity(userRequestDto);
+
+        user.setActive(true);
+        user.setStatus("PENDING");
+        user.getCompanies().add(company.get());
+        company.get().getEmployees().add(user);
+
+
+        return basicUserMapper.entityToBasicUserDto(userRepository.saveAndFlush(user));
     }
 }

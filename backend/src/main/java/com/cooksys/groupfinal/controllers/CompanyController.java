@@ -2,15 +2,10 @@ package com.cooksys.groupfinal.controllers;
 
 import java.util.Set;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.cooksys.groupfinal.dtos.*;
+import com.cooksys.groupfinal.services.UserService;
+import org.springframework.web.bind.annotation.*;
 
-import com.cooksys.groupfinal.dtos.AnnouncementDto;
-import com.cooksys.groupfinal.dtos.FullUserDto;
-import com.cooksys.groupfinal.dtos.ProjectDto;
-import com.cooksys.groupfinal.dtos.TeamDto;
 import com.cooksys.groupfinal.services.CompanyService;
 
 import lombok.RequiredArgsConstructor;
@@ -21,6 +16,7 @@ import lombok.RequiredArgsConstructor;
 public class CompanyController {
 	
 	private final CompanyService companyService;
+    private final UserService userService;
 	
 	@GetMapping("/{id}/users")
     public Set<FullUserDto> getAllUsers(@PathVariable Long id) {
@@ -41,5 +37,15 @@ public class CompanyController {
 	public Set<ProjectDto> getAllProjects(@PathVariable Long companyId, @PathVariable Long teamId) {
 		return companyService.getAllProjects(companyId, teamId);
 	}
+
+    @PostMapping("/create")
+    public CompanyDto createCompany(@RequestBody CompanyRequestDto companyRequestDto) {
+        return companyService.createCompany(companyRequestDto);
+    }
+
+    @PostMapping("/{companyId}/users")
+    public BasicUserDto createUser(@RequestBody UserRequestDto userRequestDto, @PathVariable Long companyId) {
+        return userService.createUser(userRequestDto, companyId);
+    }
 
 }
