@@ -8,14 +8,14 @@
         <div class="info">
             <label for="email">email</label>
             <div class="email-container">
-                <input type="userEmail" id="userEmail" placeholder="yourEmail@email.com"/>
+                <input type="userEmail" id="userEmail" placeholder="yourEmail@email.com" [(ngModel)]="username"/>
             </div>
             <label for="password">password</label>
             <div class="password-container">
-                <input type="userPassword" id="userPassword" placeholder="password"/>
+                <input type="userPassword" id="userPassword" placeholder="password" [(ngModel)]="password"/>
             </div>
         </div>
-        <button class="loginButton">Login</button>
+        <button class="loginButton" (click)="login()">Login</button>
     </div>
 
 </div>
