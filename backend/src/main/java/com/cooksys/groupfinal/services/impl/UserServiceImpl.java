@@ -2,6 +2,7 @@ package com.cooksys.groupfinal.services.impl;
 
 import java.util.Optional;
 
+import com.cooksys.groupfinal.dtos.EmailLoginDto;
 import org.springframework.stereotype.Service;
 
 import com.cooksys.groupfinal.dtos.CredentialsDto;
@@ -33,7 +34,14 @@ public class UserServiceImpl implements UserService {
         }
         return user.get();
     }
-	
+
+    private User findUserByEmail(String email) {
+        Optional<User> user = userRepository.findByProfile_EmailAndActiveTrue(email);
+        if (user.isEmpty()) {
+            throw new NotFoundException("The email provided does not belong to an active user.");
+        }
+        return user.get();
+    }
 	@Override
 	public FullUserDto login(CredentialsDto credentialsDto) {
 		if (credentialsDto == null || credentialsDto.getUsername() == null || credentialsDto.getPassword() == null) {
@@ -50,11 +58,21 @@ public class UserServiceImpl implements UserService {
         }
         return fullUserMapper.entityToFullUserDto(userToValidate);
 	}
-	
-	
-	
-	
-	
-	
 
+    @Override
+    public FullUserDto login(EmailLoginDto emailLoginDto) {
+        if (emailLoginDto == null || emailLoginDto.getEmail() == null || emailLoginDto.getPassword() == null) {
+            throw new BadRequestException("An email and password are required.");
+        }
+        User userToValidate = userRepository.findByProfile_EmailAndActiveTrue(emailLoginDto.getEmail())
+                .orElseThrow(() -> new NotFoundException("The email provided does not belong to an active user."));
+        if (!userToValidate.getCredentials().getPassword().equals(emailLoginDto.getPassword())) {
+            throw new NotAuthorizedException("The provided credentials are invalid.");
+        }
+        if (userToValidate.getStatus().equals("PENDING")) {
+        	userToValidate.setStatus("JOINED");
+        	userRepository.saveAndFlush(userToValidate);
+        }
+        return fullUserMapper.entityToFullUserDto(userToValidate);
+    }
 }
