@@ -41,18 +41,10 @@ public class CompanyController {
 	}
 
     @PostMapping("/create")
+    @CrossOrigin(origins="*")
     public CompanyDto createCompany(@RequestBody CompanyRequestDto companyRequestDto) {
         return companyService.createCompany(companyRequestDto);
     }
-
-    @PostMapping("/{companyId}/users")
-    @CrossOrigin(origins="*")
-
-    public BasicUserDto createUser(@RequestBody UserRequestDto userRequestDto, @PathVariable Long companyId) {
-        return userService.createUser(userRequestDto, companyId);
-    }
-
-
 
     @GetMapping
     public Set<CompanyDto> getAllCompanies(){
