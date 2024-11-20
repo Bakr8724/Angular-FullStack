@@ -21,6 +21,15 @@ export class UsersComponent implements OnInit {
     confirmPassword: '',
     admin: '',
   }
+  modNewUser = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    password: '',
+    admin: '',
+    username: '',
+  }
   showNewUserModal: boolean = false;
 
   constructor(public http: HttpClient, public userService: UserService, public router: Router) {}
@@ -72,7 +81,19 @@ createUser(): void {
 
     const url = `http://localhost:8080/users/${companyId}`;
 
-    this.http.post(url, this.newUser).subscribe({
+    this.modNewUser = {
+      firstName: this.newUser.firstName,
+      lastName: this.newUser.lastName,
+      email: this.newUser.email,
+      phone: this.newUser.phone,
+      password: this.newUser.password,
+      admin: this.newUser.admin,
+      username: this.newUser.firstName+this.newUser.lastName,
+    }
+
+
+
+    this.http.post(url, this.modNewUser).subscribe({
       next: () => {
         alert('User created successfully!');
         this.fetchUsers(companyId);
