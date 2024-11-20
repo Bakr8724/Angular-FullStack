@@ -1,17 +1,5 @@
-
-
-    <div class="top-banner">
-        <span *ngIf="isAdmin; else workerBanner">ACTING AS ADMIN</span>
-        <ng-template #workerBanner>
-        <span>{{ userService.getUserSession()?.firstName }} {{ userService.getUserSession()?.lastName }}</span>
-        </ng-template>
-    </div>
-
-
-
-
-    <app-navbar></app-navbar>
-    <div class="page">
+<app-navbar></app-navbar>
+<div class="page">
     <div class="content">
         <h1>Announcements</h1>
         <button *ngIf="isAdmin" class="new-announcement" (click)="openModal()">New</button>

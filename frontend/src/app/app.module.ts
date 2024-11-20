@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
+import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedComponent } from './shared/shared.component';
-import { AdminComponent } from './admin/admin.component';
+
 import { WorkerComponent } from './worker/worker.component';
 import { AnnouncementsComponent } from './announcements/announcements.component';
 import { TeamsComponent } from './teams/teams.component';
@@ -20,7 +20,6 @@ import { NameCellComponent } from './components/teams-container/team-card/name-c
   declarations: [
     AppComponent,
     SharedComponent,
-    AdminComponent,
     WorkerComponent,
     AnnouncementsComponent,
     TeamsComponent,
@@ -35,7 +34,8 @@ import { NameCellComponent } from './components/teams-container/team-card/name-c
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
