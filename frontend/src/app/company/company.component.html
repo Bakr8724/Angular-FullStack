@@ -2,7 +2,7 @@
     <div class="selectCompany">
       <h1 class="title">Select Company</h1>
       <div class="companyOption">
-        <label for="dropdown">Pick an option:</label>
+        <label for="dropdown"></label>
         <select id="dropdown" [(ngModel)]="selectedCompany" (change)="onCompanySelect()">
           <option value="">Pick an Option</option>
           <option *ngFor="let company of companies" [value]="company.id">
