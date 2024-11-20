@@ -22,13 +22,17 @@ export class UsersComponent implements OnInit {
     admin: '',
   }
   modNewUser = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    password: '',
-    admin: '',
-    username: '',
+    "credentials": {
+      "username": "",
+      "password": ""
+    },
+    "profile": {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "phone": ""
+    },
+    "admin": ""
   }
   showNewUserModal: boolean = false;
 
@@ -82,13 +86,17 @@ createUser(): void {
     const url = `http://localhost:8080/users/${companyId}`;
 
     this.modNewUser = {
-      firstName: this.newUser.firstName,
-      lastName: this.newUser.lastName,
-      email: this.newUser.email,
-      phone: this.newUser.phone,
-      password: this.newUser.password,
-      admin: this.newUser.admin,
-      username: this.newUser.firstName+this.newUser.lastName,
+        "credentials": {
+          "username": this.newUser.firstName + this.newUser.lastName,
+          "password": this.newUser.password
+        },
+        "profile": {
+          "firstName": this.newUser.firstName,
+          "lastName": this.newUser.lastName,
+          "email": this.newUser.email,
+          "phone": this.newUser.phone
+        },
+        "admin": this.newUser.admin
     }
 
 
