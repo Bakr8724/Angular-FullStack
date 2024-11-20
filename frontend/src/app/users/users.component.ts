@@ -70,7 +70,7 @@ createUser(): void {
       return;
     }
 
-    const url = `http://localhost:8080/company/${companyId}/users/create`;
+    const url = `http://localhost:8080/users/${companyId}`;
 
     this.http.post(url, this.newUser).subscribe({
       next: () => {
