@@ -1,0 +1,42 @@
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Ensures space between brand and nav items */
+  align-items: center;
+  background-color: #051622; /* Background color */
+  padding: 1rem 2rem; /* Add padding for spacing */
+  border-bottom: 2px solid #DEB992;
+
+}
+
+.navbar-brand {
+  color: #1ba098; /* Text color */
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-left: 1.5rem; /* Space between nav items */
+}
+
+.nav-link {
+  color: #1ba098; /* Text color */
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.nav-link:hover {
+  color: #13dac1; /* Slightly lighter hover color */
+}
+
+.nav-link.active {
+  font-weight: bold;
+  border-bottom: 2px solid #1ba098; /* Highlight active link */
+}

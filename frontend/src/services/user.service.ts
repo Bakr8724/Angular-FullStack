@@ -51,7 +51,7 @@ export class UserService {
 
     // If the user is an admin, fetch all companies
     if (user?.role === 'admin') {
-      return this.http.get<any[]>('http://localhost:8080/company');
+      return this.http.get<any[]>('http://localhost:8080/company/');
     }
 
     // If the user is a worker, fetch only the associated company

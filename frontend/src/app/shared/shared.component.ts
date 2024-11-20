@@ -37,7 +37,6 @@ export class SharedComponent implements OnInit{
           lastName: response.profile.lastName,
           email: response.profile.email,
           role: response.admin ? 'admin' : 'worker',
-  
         };
 
         // Save user session using the service
@@ -49,7 +48,7 @@ export class SharedComponent implements OnInit{
 
         // Redirect based on user role
         if (user.role === 'admin') {
-          this.router.navigate(['/admin']);
+          this.router.navigate(['/company']);
         } else {
           this.router.navigate(['/worker']);
         }

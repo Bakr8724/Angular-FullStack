@@ -9,14 +9,19 @@ import { SharedComponent } from './shared/shared.component';
 import { AdminComponent } from './admin/admin.component';
 import { WorkerComponent } from './worker/worker.component';
 import { AnnouncementsComponent } from './announcements/announcements.component';
-
+import { TeamsComponent } from './teams/teams.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { CompanyComponent } from './company/company.component';
 @NgModule({
   declarations: [
     AppComponent,
     SharedComponent,
     AdminComponent,
     WorkerComponent,
-    AnnouncementsComponent
+    AnnouncementsComponent,
+    TeamsComponent,
+    NavbarComponent,
+    CompanyComponent
   ],
   imports: [
     BrowserModule,
