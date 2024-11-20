@@ -7,6 +7,8 @@ import { Observable, of } from 'rxjs';
 })
 export class UserService {
   private userKey = 'user';
+  private baseUrl = 'http://localhost:8080';
+  
   constructor(private http: HttpClient) { }
 
   setUserSession(user: {
@@ -46,17 +48,24 @@ export class UserService {
     return user?.role === 'admin';
   }
 
+  fetchTeams(): Observable<any[]> {
+    console.log('fetching teams');
+    console.log(this.baseUrl + '/company/' + this.getSelectedCompany() + '/teams');
+    return this.http.get<any[]>(this.baseUrl + '/company/' + this.getSelectedCompany() + '/teams');
+  }
+
   fetchCompanies(): Observable<any[]> {
     const user = this.getUserSession();
 
     // If the user is an admin, fetch all companies
     if (user?.role === 'admin') {
-      return this.http.get<any[]>('http://localhost:8080/company/');
+      console.log('fetching companies');
+      return this.http.get<any[]>(this.baseUrl + '/company/');
     }
 
     // If the user is a worker, fetch only the associated company
     if (user) {
-      return this.http.get<any[]>(`http://localhost:8080/users/${user.id}/company`);
+      return this.http.get<any[]>(`${this.baseUrl}/users/${user.id}/company`);
     }
 
     // Return empty array if no user is logged in

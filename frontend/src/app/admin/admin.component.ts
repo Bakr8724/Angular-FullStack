@@ -25,6 +25,7 @@ export class AdminComponent {
       if (this.role === 'admin') {
         this.userService.fetchCompanies().subscribe({
           next: (companies) => {
+            console.log(companies);
             this.companies = companies;
           },
           error: (err) => {
