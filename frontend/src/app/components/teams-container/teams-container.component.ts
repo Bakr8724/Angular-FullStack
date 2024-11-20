@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from 'src/services/user.service';
 @Component({
   selector: 'app-teams-container',
@@ -6,7 +7,7 @@ import { UserService } from 'src/services/user.service';
   styleUrls: ['./teams-container.component.css'],
 })
 export class TeamsContainerComponent {
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
   teams: any;
   ngOnInit() {
     this.userService.fetchTeams().subscribe({
@@ -19,5 +20,9 @@ export class TeamsContainerComponent {
       },
     });
     console.log(this.teams);
+    
   }
+
+
+
 }

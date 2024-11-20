@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from 'src/services/user.service';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-announcements',
@@ -43,6 +43,7 @@ export class AnnouncementsComponent implements OnInit {
       },
     });
   }
+  
   openModal(): void {
     this.showModal = true;
   }

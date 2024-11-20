@@ -7,6 +7,7 @@ import { AnnouncementsComponent } from './announcements/announcements.component'
 import { TeamsComponent } from './teams/teams.component';
 import { UsersComponent } from './users/users.component';
 import  {CompanyComponent} from './company/company.component';
+import { ProjectsComponent } from './projects/projects.component';
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch:'full'},
   {path: 'login', component: SharedComponent},
@@ -14,7 +15,9 @@ const routes: Routes = [
   {path: 'worker', component: WorkerComponent},
   {path: 'announcements', component: AnnouncementsComponent},
   {path: 'teams', component: TeamsComponent},
-  {path: 'users', component: UsersComponent}
+  {path: 'users', component: UsersComponent},
+
+  {path: 'projects/:id', component: ProjectsComponent}
 ];
 
 @NgModule({

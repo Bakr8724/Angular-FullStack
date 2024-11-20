@@ -16,6 +16,8 @@ import { UsersComponent } from './users/users.component';
 import { TeamsContainerComponent } from './components/teams-container/teams-container.component';
 import { TeamCardComponent } from './components/teams-container/team-card/team-card.component';
 import { NameCellComponent } from './components/teams-container/team-card/name-cell/name-cell.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ProjectFormComponent } from './components/project-form/project-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,9 @@ import { NameCellComponent } from './components/teams-container/team-card/name-c
     UsersComponent,
     TeamsContainerComponent,
     TeamCardComponent,
-    NameCellComponent
+    NameCellComponent,
+    ProjectsComponent,
+    ProjectFormComponent
   ],
   imports: [
     BrowserModule,
