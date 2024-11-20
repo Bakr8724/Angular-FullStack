@@ -55,7 +55,7 @@ export class UsersComponent implements OnInit {
       next: (response: any) => {
         this.users = response;
       },
-      error: (err) => {
+      error: (err: any) => {
         console.error('Error fetching users:', err);
       },
     });
@@ -107,7 +107,7 @@ createUser(): void {
         this.fetchUsers(companyId);
         this.closeNewUserModal();
       },
-      error: (err) => {
+      error: (err: any) => {
         console.error('Error creating user:', err);
         alert('Failed to create user.');
       },
