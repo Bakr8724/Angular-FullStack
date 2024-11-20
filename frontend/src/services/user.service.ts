@@ -53,6 +53,12 @@ export class UserService {
     console.log(this.baseUrl + '/company/' + this.getSelectedCompany() + '/teams');
     return this.http.get<any[]>(this.baseUrl + '/company/' + this.getSelectedCompany() + '/teams');
   }
+  
+  fetchProjects(companyId: number, teamId: number): Observable<any[]> {
+    const url = `${this.baseUrl}/company/${companyId}/teams/${teamId}/projects`;
+    console.log(`Fetching projects from URL: ${url}`);
+    return this.http.get<any[]>(url);
+  }
 
   fetchCompanies(): Observable<any[]> {
     const user = this.getUserSession();
