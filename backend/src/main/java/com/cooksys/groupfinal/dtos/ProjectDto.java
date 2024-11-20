@@ -1,5 +1,6 @@
 package com.cooksys.groupfinal.dtos;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,7 +15,5 @@ public class ProjectDto {
     private String description;
     
     private boolean active;
-    
-    private TeamDto team;
 
 }

@@ -13,10 +13,10 @@ public class CompanyDto {
     
     private String name;
     
-    private String description;
-    
-    private Set<TeamDto> teams;
-    
-    private Set<BasicUserDto> employees;
+//    private String description;
+//
+//    private Set<TeamDto> teams;
+//
+//    private Set<BasicUserDto> employees;
 
 }

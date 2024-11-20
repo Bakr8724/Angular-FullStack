@@ -93,8 +93,7 @@ public class CompanyServiceImpl implements CompanyService {
 
 	@Override
 	public Set<CompanyDto> getAllCompanies() {
-		Set<Company> companies = new HashSet<>(companyRepository.findAll());
-		return companyMapper.entitiesToDtos(companies);
+		return companyMapper.entitiesToDtos(companyRepository.findAll());
 	}
 
 	@Override

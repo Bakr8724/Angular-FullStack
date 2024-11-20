@@ -33,12 +33,9 @@ public class TeamServiceImpl implements TeamService {
         Team team = teamRepository.saveAndFlush(teamMapper.dtoToEntity(teamRequestDto));
         Company company = companyRepository.findById(companyId).orElseThrow(() -> new NotFoundException("Company not found"));
         company.getTeams().add(team);
-        team.setCompany(company);
-        Set<User> users = new HashSet<>(userRepository.findAllById(teamRequestDto.getTeammates()));
-        team.setTeammates(users);
-        users.forEach(user -> user.getTeams().add(team));
-        userRepository.saveAllAndFlush(users);
         companyRepository.saveAndFlush(company);
+        team.getTeammates().forEach(user -> user.getTeams().add(team));
+        userRepository.saveAllAndFlush(team.getTeammates());
         return teamMapper.entityToDto(team);
     }
 }
