@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b9ed5efe-c199-4b0c-adc4-8a14519baf53" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/controllers/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/controllers/CompanyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/dtos/TeamRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/dtos/TeamRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/mappers/FullUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/mappers/FullUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/mappers/TeamMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/mappers/TeamMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/services/impl/TeamServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/services/impl/TeamServiceImpl.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;fadibuni&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/fasttrackd-student-work/angular-group-final-green-team-october-cohort-2024.git&quot;,
+    &quot;accountId&quot;: &quot;dda15701-9bf7-413d-8b3a-d9073f2d6da6&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2p2jBLey0yBsuydHxxpdrlu9ORe" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.GroupFinalApplication.executor": "Run",
+    "Maven.group-final [clean].executor": "Run",
+    "Maven.group-final [install].executor": "Run",
+    "Maven.spring-eval-1 [clean].executor": "Run",
+    "Maven.spring-eval-1 [install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.GroupFinalApplication.executor": "Run",
+    "git-widget-placeholder": "backend",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/fadib/IdeaProjects/cooksys-backend/backend/src/main/java/com/cooksys/groupfinal",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\fadib\IdeaProjects\cooksys-backend\backend\src\main\java\com\cooksys\groupfinal" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="GroupFinalApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="spring-eval-1" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.cooksys.groupfinal.GroupFinalApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b9ed5efe-c199-4b0c-adc4-8a14519baf53" name="Changes" comment="" />
+      <created>1731970927576</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731970927576</updated>
+      <workItem from="1731970928629" duration="435000" />
+      <workItem from="1731971615770" duration="6042000" />
+      <workItem from="1731983205447" duration="1364000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/cooksys/groupfinal/mappers/CredentialsMapper.java</url>
+          <line>10</line>
+          <properties class="com.cooksys.groupfinal.mappers.CredentialsMapper" method="dtoToEntity">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.cooksys.groupfinal.entities.Company" memberName="teams" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+</project>
