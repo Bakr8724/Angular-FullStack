@@ -19,8 +19,9 @@ export class ProjectFormComponent {
   submitForm(): void {
     if (this.isEdit) {
       this.http.patch(`http://localhost:8080/projects/${this.form.id}`, this.form).subscribe({
-        next: () => {
+        next: (updatedProject) => {
           alert('Project updated successfully!');
+          console.log('Updated project:', updatedProject);
           this.projectUpdated.emit(); // Notify parent to refresh
           this.close.emit();
         },

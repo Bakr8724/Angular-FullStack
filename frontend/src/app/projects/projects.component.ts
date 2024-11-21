@@ -29,18 +29,22 @@ export class ProjectsComponent implements OnInit {
     const user = this.userService.getUserSession();
     this.isAdmin = user?.role === 'admin';
   
-    // Check for state data
+    // Check for state data passed in from the team-card on click
     const state = this.router.getCurrentNavigation()?.extras.state as {
       teamId: number;
       teamName: string;
     };
     console.log('Navigation state in ProjectsComponent:', state);
   
-    if (state?.teamId && state?.teamName) {
+    if (state?.teamId) {
       this.teamId = state.teamId;
-      this.teamName = state.teamName;
+      this.teamName = state.teamName || '';
       console.log('Using state data for team:', state);
-  
+
+      if (!this.teamName) {
+        this.fetchTeamDetails(this.teamId);
+      }
+
       this.fetchProjects(this.teamId);
     } else {
       // Fallback to route params
@@ -49,6 +53,7 @@ export class ProjectsComponent implements OnInit {
         const companyId = this.userService.getSelectedCompany();
         if (companyId) {
           this.fetchProjects(this.teamId);
+          this.fetchTeamDetails(this.teamId);
         } else {
           console.error('No company selected!');
         }
@@ -64,9 +69,11 @@ export class ProjectsComponent implements OnInit {
   
   
   fetchTeamDetails(teamId: number): void {
-    this.http.get(`http://localhost:8080/teams/${teamId}`).subscribe({
+    this.http.get(`http://localhost:8080/team/${teamId}`).subscribe({
       next: (response: any) => {
+        console.log('Fetched team details:', response);
         this.teamName = response.name;
+        
       },
       error: (err) => {
         console.error('Error fetching team details:', err);
@@ -83,6 +90,7 @@ export class ProjectsComponent implements OnInit {
   
     this.userService.fetchProjects(companyId, teamId).subscribe({
       next: (response) => {
+        console.log('Fetched projects:', response);
         this.projects = response;
       },
       error: (err) => {
