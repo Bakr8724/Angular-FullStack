@@ -3,13 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
   private userKey = 'user';
   private baseUrl = 'http://localhost:8080';
-  
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient) {}
 
   setUserSession(user: {
     id: number;
@@ -18,21 +18,18 @@ export class UserService {
     email: string;
     role: string;
     token?: string;
-
   }): void {
     localStorage.setItem(this.userKey, JSON.stringify(user));
   }
-  
-  getUserSession():
-  | {
-      id: number;
-      firstName: string;
-      lastName: string;
-      email: string;
-      role: string;
-      token?: string;
-    }
-  | null {
+
+  getUserSession(): {
+    id: number;
+    firstName: string;
+    lastName: string;
+    email: string;
+    role: string;
+    token?: string;
+  } | null {
     const user = localStorage.getItem(this.userKey);
     return user ? JSON.parse(user) : null;
   }
@@ -50,16 +47,26 @@ export class UserService {
 
   fetchTeams(): Observable<any[]> {
     console.log('fetching teams');
-    console.log(this.baseUrl + '/company/' + this.getSelectedCompany() + '/teams');
-    return this.http.get<any[]>(this.baseUrl + '/company/' + this.getSelectedCompany() + '/teams');
+    console.log(
+      this.baseUrl + '/company/' + this.getSelectedCompany() + '/teams'
+    );
+    return this.http.get<any[]>(
+      this.baseUrl + '/company/' + this.getSelectedCompany() + '/teams'
+    );
   }
-  
+
   fetchProjects(companyId: number, teamId: number): Observable<any[]> {
     const url = `${this.baseUrl}/company/${companyId}/teams/${teamId}/projects`;
     console.log(`Fetching projects from URL: ${url}`);
     return this.http.get<any[]>(url);
   }
-
+  fetchUsers(): Observable<any[]> {
+    console.log('fetching users');
+    console.log(this.baseUrl + "/company/" + this.getSelectedCompany() + "/users");
+    return this.http.get<any[]>(
+      this.baseUrl + `/company/${this.getSelectedCompany()}/users`
+    );
+  }
   fetchCompanies(): Observable<any[]> {
     const user = this.getUserSession();
 
@@ -90,6 +97,4 @@ export class UserService {
   clearSession(): void {
     localStorage.removeItem(this.userKey);
   }
-
-
 }
