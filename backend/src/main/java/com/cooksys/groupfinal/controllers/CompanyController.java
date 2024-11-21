@@ -22,7 +22,6 @@ public class CompanyController {
 	
 	@GetMapping("/{id}/users")
     @CrossOrigin(origins="*")
-
     public Set<FullUserDto> getAllUsers(@PathVariable Long id) {
         return companyService.getAllUsers(id);
     }

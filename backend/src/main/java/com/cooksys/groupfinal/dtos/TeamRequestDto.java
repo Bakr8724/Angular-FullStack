@@ -11,5 +11,5 @@ import java.util.Set;
 public class TeamRequestDto {
     private String name;
     private String description;
-    private Set<User> teammates;
+    private Set<Long> teammates;
 }
