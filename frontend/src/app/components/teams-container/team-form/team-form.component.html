@@ -33,7 +33,7 @@
         (change)="addMember($event)"
         class="form-control"
       >
-      <option value="" disabled selected>Select a member</option>
+      <option value="" disabled selected>Select a member to add</option>
         <option *ngFor="let member of members" [value]="member.profile.firstName + ' ' +  member.profile.lastName.charAt(0) +'.'">
           {{ member.profile.firstName }} {{ member.profile.lastName.charAt(0) }}.
         </option>
