@@ -1,0 +1,61 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    background-color: #051622;
+    overflow: hidden;
+    padding-top: 50px; 
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #1BA098;
+    text-align: center;
+  }
+  
+  /* Header Row */
+  .header-row {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 20px; 
+    width: 100%; 
+    margin-bottom: 40px; 
+    position: relative;
+    padding: 0 50px;
+  }
+  
+  .header-row h1 {
+    margin: 0 auto; 
+    font-size: 2rem;
+    color: #1BA098;
+    text-align: center;
+  }
+  
+  .new-user {
+    background-color: #1BA098;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #1E293B;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: flex-end; 
+    margin-top: 0; 
+  }
+  
+  
+  /* Divider Styling */
+  .divider {
+    width: 850px;
+    border: none;
+    border-top: 2px solid #DEB992;
+    margin: 10px auto 30px;
+  }
+
+  
