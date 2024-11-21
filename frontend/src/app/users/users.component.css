@@ -93,18 +93,16 @@
   }
   
   .close-btn {
-    background: #de5246;
+    background: none;
     border: none;
     font-size: 1.5rem;
-    color: #ffffff;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    color: #deb992;
     cursor: pointer;
-    text-align: center;
-    line-height: 40px;
+    transition: color 0.3s ease;
   }
-  
+  .close-btn:hover {
+    color: #ff6b6b;
+  }
   .modal-body label {
     display: block;
     font-size: 0.9rem;

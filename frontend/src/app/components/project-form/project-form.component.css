@@ -29,20 +29,16 @@
   
   /* Close button */
   .close-button {
-    background: #de5246;
+    background: none;
     border: none;
     font-size: 1.5rem;
-    color: #ffffff;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    color: #deb992;
     cursor: pointer;
-    text-align: center;
-    line-height: 40px;
+    transition: color 0.3s ease;
   }
   
   .close-button:hover {
-    color: #333;
+    color: #ff6b6b;
   }
   
   /* Form styling */
@@ -75,19 +71,19 @@
   
   .popup-form .form-actions {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
   }
   
   .submit-button {
+    background-color: #1ba098;
+    border: none;
     padding: 10px 20px;
     font-size: 1rem;
+    color: #051622;
     font-weight: bold;
-    border: none;
     border-radius: 5px;
-    color: white;
-    background-color: #1ba098;
     cursor: pointer;
-    transition: transform 0.2s, background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
   }
   
   .submit-button:hover {
